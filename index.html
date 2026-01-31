@@ -3,94 +3,297 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>中岡興業｜建設業（建築・土木・改修）</title>
-  <meta name="description" content="中岡興業は建設業を中心に、建築・土木・改修工事まで一貫対応。安全と品質を第一に地域に貢献します。" />
+  <title>中岡興業｜建設の未来をつくる</title>
+  <meta name="description" content="中岡興業は建築・土木・改修工事に対応。安全と品質を第一に、地域の未来を支える建設会社です。" />
 
   <style>
     :root{
-      --bg:#0b1020; --panel:#0f1833; --card:#0f1b3b;
-      --text:#eef3ff; --muted:#b9c6ea;
-      --accent:#5ea1ff; --accent2:#7cf0ff;
-      --border:rgba(255,255,255,.12);
-      --shadow:0 18px 50px rgba(0,0,0,.35);
-      --radius:18px; --max:1120px;
+      --bg:#070A12;
+      --text:#F6F7FB;
+      --muted:rgba(246,247,251,.72);
+      --card:rgba(255,255,255,.07);
+      --border:rgba(255,255,255,.14);
+      --shadow:0 24px 70px rgba(0,0,0,.45);
+      --radius:18px;
+
+      --a1:#7C3AED; /* purple */
+      --a2:#22D3EE; /* cyan */
+      --a3:#F97316; /* orange */
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0; color:var(--text); line-height:1.75;
+      margin:0;
       font-family: system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+      color:var(--text);
+      line-height:1.75;
       background:
-        radial-gradient(1000px 600px at 10% 0%, rgba(94,161,255,.22), transparent),
-        radial-gradient(900px 500px at 90% 10%, rgba(124,240,255,.14), transparent),
-        var(--bg);
+        radial-gradient(1200px 800px at 10% -10%, rgba(124,58,237,.45), transparent 60%),
+        radial-gradient(1000px 650px at 95% 0%, rgba(34,211,238,.35), transparent 55%),
+        radial-gradient(900px 650px at 70% 100%, rgba(249,115,22,.20), transparent 55%),
+        linear-gradient(180deg, #070A12, #070A12);
+      overflow-x:hidden;
     }
-    a{color:inherit;text-decoration:none}
-    .container{width:min(var(--max), calc(100% - 32px)); margin:auto}
 
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px, calc(100% - 32px)); margin:auto}
+
+    /* ===== Header ===== */
     header{
       position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background:rgba(11,16,32,.65);
-      border-bottom:1px solid var(--border);
+      background:rgba(7,10,18,.55);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.10);
     }
-    .headerInner{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
-    .logo{width:34px;height:34px;border-radius:12px;
-      background:linear-gradient(135deg, rgba(94,161,255,.95), rgba(124,240,255,.6));
-      box-shadow:0 10px 22px rgba(0,0,0,.25)}
-    nav{display:flex; gap:18px}
-    nav a{color:var(--muted); padding:8px 10px; border-radius:10px}
-    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
-
-    .hero{padding:70px 0}
-    .heroGrid{display:grid; grid-template-columns:1.1fr .9fr; gap:18px}
-    .heroCard{
-      background: linear-gradient(135deg, rgba(15,24,51,.86), rgba(15,24,51,.45));
-      border:1px solid var(--border); border-radius:var(--radius);
-      box-shadow:var(--shadow); padding:34px;
+    .headerInner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0; gap:14px;
     }
-    .heroCard h1{margin:10px 0; font-size:clamp(28px, 4vw, 44px)}
-    .heroCard p{margin:0; color:var(--muted)}
-    .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:18px}
-    .stat{border:1px solid var(--border); border-radius:14px; padding:12px; background:rgba(255,255,255,.03)}
-    .stat b{display:block}
-
-    .heroPhoto{
-      border-radius:var(--radius); border:1px solid var(--border);
-      box-shadow:var(--shadow); overflow:hidden; min-height:320px;
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:900; letter-spacing:.4px;
     }
-    .heroPhoto img{width:100%; height:100%; object-fit:cover}
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+      box-shadow:0 12px 30px rgba(124,58,237,.35);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo::after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.7), transparent 55%);
+      transform:rotate(20deg);
+      opacity:.55;
+    }
+    nav{display:flex; gap:12px; align-items:center}
+    nav a{
+      color:rgba(246,247,251,.78);
+      padding:9px 12px; border-radius:999px;
+      border:1px solid transparent;
+    }
+    nav a:hover{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.12);
+      color:var(--text);
+    }
 
-    section{padding:54px 0}
-    .alt{border-block:1px solid var(--border); background:rgba(255,255,255,.03)}
-    .title{margin:0 0 8px; font-size:28px}
-    .lead{margin:0 0 22px; color:var(--muted)}
+    /* ===== Hero ===== */
+    .hero{padding:72px 0 34px; position:relative}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .glass{
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .heroCopy{
+      padding:34px;
+      position:relative;
+      overflow:hidden;
+    }
+    .heroCopy::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(700px 220px at 15% 20%, rgba(124,58,237,.35), transparent 60%),
+        radial-gradient(700px 220px at 85% 30%, rgba(34,211,238,.28), transparent 60%),
+        radial-gradient(700px 220px at 50% 85%, rgba(249,115,22,.18), transparent 65%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .heroCopy > *{position:relative; z-index:1}
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.06);
+      font-size:13px;
+      color:rgba(246,247,251,.88);
+    }
+    .dot{
+      width:9px; height:9px; border-radius:99px;
+      background: linear-gradient(135deg, var(--a2), var(--a1));
+      box-shadow:0 0 18px rgba(34,211,238,.35);
+    }
+    h1{
+      margin:12px 0 10px;
+      font-size:clamp(30px, 4.2vw, 52px);
+      line-height:1.12;
+      letter-spacing:-.3px;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      max-width:62ch;
+    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      height:46px; padding:0 16px;
+      border-radius:14px;
+      display:inline-flex; align-items:center; justify-content:center;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      transition: transform .06s ease, filter .2s ease, background .2s ease;
+    }
+    .btn:hover{filter:brightness(1.12); background:rgba(255,255,255,.10)}
+    .btn:active{transform:translateY(1px)}
+    .btnPrimary{
+      border-color:transparent;
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+      box-shadow:0 18px 40px rgba(124,58,237,.28);
+    }
+    .btnPrimary:hover{filter:brightness(1.08)}
+    .stats{
+      display:grid; grid-template-columns:repeat(3, 1fr);
+      gap:10px; margin-top:18px;
+    }
+    .stat{
+      padding:12px; border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.16);
+    }
+    .stat b{display:block; font-size:18px}
+    .stat span{display:block; color:var(--muted); font-size:13px}
 
-    .grid{display:grid; gap:16px}
-    .grid3{grid-template-columns:repeat(3,1fr)}
+    .heroMedia{
+      overflow:hidden;
+      min-height:360px;
+      position:relative;
+    }
+    .heroMedia img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      transform:scale(1.03);
+      filter:saturate(1.08) contrast(1.04);
+    }
+    .heroMedia::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(7,10,18,.10), rgba(7,10,18,.70)),
+        radial-gradient(600px 220px at 20% 20%, rgba(34,211,238,.22), transparent 60%);
+      pointer-events:none;
+    }
+
+    /* ===== Section ===== */
+    section{padding:56px 0}
+    .sectionHead{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:18px}
+    .sectionHead h2{margin:0; font-size:28px}
+    .sectionHead p{margin:0; color:var(--muted)}
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 12px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:rgba(246,247,251,.88);
+      font-size:13px;
+      white-space:nowrap;
+    }
+
+    .grid3{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px}
     .card{
-      background: linear-gradient(180deg, rgba(15,27,59,.90), rgba(15,27,59,.62));
-      border:1px solid var(--border); border-radius:var(--radius);
-      box-shadow:var(--shadow); padding:18px;
+      padding:18px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      transform:translateY(0);
+      transition: transform .18s ease, filter .2s ease;
     }
-    .thumb{height:170px; border-radius:14px; overflow:hidden; margin-bottom:12px}
-    .thumb img{width:100%; height:100%; object-fit:cover}
+    .card:hover{transform:translateY(-4px); filter:brightness(1.06)}
+    .thumb{
+      height:170px;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.18);
+      margin-bottom:12px;
+    }
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .card h3{margin:0 0 8px}
+    .card p{margin:0;color:var(--muted)}
+    .list{margin:12px 0 0; padding-left:18px; color:var(--muted)}
 
-    .aboutWrap{display:grid; grid-template-columns:.95fr 1.05fr; gap:16px}
-    .aboutPhoto{border-radius:var(--radius); overflow:hidden; min-height:340px; border:1px solid var(--border); box-shadow:var(--shadow)}
-    .aboutPhoto img{width:100%; height:100%; object-fit:cover}
-    .info{border:1px solid var(--border); border-radius:var(--radius); padding:18px; background:rgba(15,24,51,.7)}
-    .row{display:grid; grid-template-columns:160px 1fr; gap:12px; padding:10px}
-    .key{color:var(--muted)}
+    /* ===== About ===== */
+    .aboutGrid{display:grid; grid-template-columns: .95fr 1.05fr; gap:16px; align-items:stretch}
+    .aboutMedia{min-height:340px; overflow:hidden; position:relative}
+    .aboutMedia img{width:100%;height:100%;object-fit:cover;display:block}
+    .aboutMedia::after{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(7,10,18,.10), rgba(7,10,18,.75));
+      pointer-events:none;
+    }
+    .info{
+      padding:18px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      box-shadow:var(--shadow);
+    }
+    .row{
+      display:grid; grid-template-columns: 170px 1fr;
+      gap:12px;
+      padding:12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.16);
+      margin-bottom:10px;
+    }
+    .row:last-child{margin-bottom:0}
+    .k{color:rgba(246,247,251,.70); font-size:14px}
+    .v{font-weight:700}
 
-    footer{border-top:1px solid var(--border); background:rgba(11,16,32,.65); padding:18px 0}
-    .footerInner{display:flex; justify-content:space-between; color:var(--muted); font-size:14px}
+    /* ===== Contact ===== */
+    .contactBox{
+      padding:18px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      box-shadow:var(--shadow);
+    }
+    .contactGrid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    .contactItem{
+      padding:14px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.16);
+    }
+    .contactItem small{color:var(--muted)}
+    .link{color:rgba(34,211,238,.95)}
+    .link:hover{text-decoration:underline}
 
-    @media (max-width: 900px){
-      .heroGrid,.grid3,.aboutWrap{grid-template-columns:1fr}
+    footer{
+      padding:18px 0;
+      border-top:1px solid rgba(255,255,255,.10);
+      background:rgba(7,10,18,.55);
+      backdrop-filter: blur(10px);
+    }
+    .footerInner{display:flex; justify-content:space-between; gap:10px; color:var(--muted); font-size:14px}
+
+    /* ===== Responsive ===== */
+    @media (max-width: 920px){
+      .heroGrid,.grid3,.aboutGrid,.contactGrid{grid-template-columns:1fr}
       .stats{grid-template-columns:1fr}
+      nav{gap:6px}
+      nav a{padding:8px 10px}
+      .row{grid-template-columns:1fr}
     }
+
+    /* ===== subtle entrance ===== */
+    .reveal{opacity:0; transform:translateY(10px); transition: opacity .6s ease, transform .6s ease}
+    .reveal.on{opacity:1; transform:none}
   </style>
 </head>
 
@@ -100,6 +303,7 @@
     <a class="brand" href="#top"><span class="logo"></span>中岡興業</a>
     <nav>
       <a href="#services">事業内容</a>
+      <a href="#strengths">強み</a>
       <a href="#about">会社情報</a>
       <a href="#contact">お問い合わせ</a>
     </nav>
@@ -110,41 +314,100 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container heroGrid">
-      <div class="heroCard">
-        <h1>安全と品質を第一に、<br>地域の未来を支える施工を。</h1>
-        <p>中岡興業は、建築・土木・改修工事まで一貫対応。安心して任せられる施工を提供します。</p>
+      <div class="glass heroCopy reveal">
+        <span class="tag"><span class="dot"></span>建設業（建築・土木・改修）</span>
+        <h1>現場に強い。<br>だから、安心できる。</h1>
+        <p class="sub">
+          中岡興業は、安全と品質を第一に、建築・土木・改修工事まで一貫対応。
+          地域密着の対応力で、確かな施工を提供します。
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="#contact">お問い合わせ</a>
+          <a class="btn" href="#services">事業内容を見る</a>
+        </div>
+
         <div class="stats">
-          <div class="stat"><b>年商 12億円</b><span>安定基盤</span></div>
-          <div class="stat"><b>安全第一</b><span>管理徹底</span></div>
-          <div class="stat"><b>地域密着</b><span>迅速対応</span></div>
+          <div class="stat"><b>年商 12億円</b><span>安定した事業基盤</span></div>
+          <div class="stat"><b>安全第一</b><span>現場ルールの徹底</span></div>
+          <div class="stat"><b>地域密着</b><span>迅速な対応力</span></div>
         </div>
       </div>
-      <div class="heroPhoto">
-        <img src="hero.JPG" alt="中岡興業 建設現場">
+
+      <div class="glass heroMedia reveal" style="transition-delay:.08s">
+        <img src="hero.JPG" alt="中岡興業 建設現場の様子">
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="alt">
+  <section id="services">
     <div class="container">
-      <h2 class="title">事業内容</h2>
-      <p class="lead">建築・土木・改修まで幅広く対応します。</p>
-      <div class="grid grid3">
-        <div class="card">
+      <div class="sectionHead">
+        <div>
+          <h2>事業内容</h2>
+          <p>建築・土木・改修まで、現場状況に合わせた最適な施工をご提案します。</p>
+        </div>
+        <span class="pill">対応エリア：四海</span>
+      </div>
+
+      <div class="grid3">
+        <article class="card reveal">
           <div class="thumb"><img src="service1.JPG" alt="建築工事"></div>
           <h3>建築工事</h3>
-          <p>新築・増改築などを品質重視で施工。</p>
-        </div>
-        <div class="card">
+          <p>新築・増改築・各種建築工事を、品質重視で確実に施工します。</p>
+          <ul class="list">
+            <li>工程・品質・安全を一体管理</li>
+            <li>現場環境に合わせた施工計画</li>
+          </ul>
+        </article>
+
+        <article class="card reveal" style="transition-delay:.06s">
           <div class="thumb"><img src="service2.JPG" alt="土木工事"></div>
           <h3>土木工事</h3>
-          <p>造成・基礎・外構など地域インフラを支えます。</p>
-        </div>
-        <div class="card">
-          <div class="thumb"><img src="service1.JPG" alt="改修工事"></div>
+          <p>造成・基礎・外構・舗装など、地域インフラを支える工事に対応します。</p>
+          <ul class="list">
+            <li>耐久性を意識した施工</li>
+            <li>周辺環境への配慮</li>
+          </ul>
+        </article>
+
+        <article class="card reveal" style="transition-delay:.12s">
+          <div class="thumb"><img src="service1.JPG" alt="改修・リフォーム"></div>
           <h3>改修・リフォーム</h3>
-          <p>安全性と機能性を高める改修をご提案。</p>
+          <p>機能性と安全性を重視し、建物の価値向上につながる改修をご提案します。</p>
+          <ul class="list">
+            <li>現地確認から丁寧に対応</li>
+            <li>工事中の安全確保</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section id="strengths">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>中岡興業の強み</h2>
+          <p>「任せて安心」と言っていただける体制を整えています。</p>
+        </div>
+        <span class="pill">安全・品質・対応力</span>
+      </div>
+
+      <div class="grid3">
+        <div class="card reveal">
+          <h3>安全管理の徹底</h3>
+          <p>危険予知・ルール遵守・点検を徹底し、事故ゼロを目指します。</p>
+        </div>
+        <div class="card reveal" style="transition-delay:.06s">
+          <h3>品質と工程の両立</h3>
+          <p>品質を落とさず工程を守る。現場経験に基づく管理で実現します。</p>
+        </div>
+        <div class="card reveal" style="transition-delay:.12s">
+          <h3>地域密着の対応力</h3>
+          <p>四海を拠点に、相談から施工までスピーディに対応します。</p>
         </div>
       </div>
     </div>
@@ -153,30 +416,61 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="container">
-      <h2 class="title">会社情報</h2>
-      <div class="aboutWrap">
-        <div class="aboutPhoto">
+      <div class="sectionHead">
+        <div>
+          <h2>会社情報</h2>
+          <p>会社概要・基本情報です。</p>
+        </div>
+        <span class="pill">建設工事一式</span>
+      </div>
+
+      <div class="aboutGrid">
+        <div class="glass aboutMedia reveal">
           <img src="company.JPG" alt="中岡興業 会社写真">
         </div>
-        <div class="info">
-          <div class="row"><div class="key">会社名</div><div>中岡興業</div></div>
-          <div class="row"><div class="key">代表取締役社長</div><div>中岡 昇也</div></div>
-          <div class="row"><div class="key">所在地</div><div>四海</div></div>
-          <div class="row"><div class="key">年商</div><div>12億円</div></div>
+
+        <div class="info reveal" style="transition-delay:.08s">
+          <div class="row"><div class="k">会社名</div><div class="v">中岡興業</div></div>
+          <div class="row"><div class="k">代表取締役社長</div><div class="v">中岡 昇也</div></div>
+          <div class="row"><div class="k">所在地</div><div class="v">四海</div></div>
+          <div class="row"><div class="k">年商</div><div class="v">12億円</div></div>
+          <div class="row"><div class="k">事業内容</div><div class="v">建築工事／土木工事／改修・リフォーム</div></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="alt">
+  <section id="contact">
     <div class="container">
-      <h2 class="title">お問い合わせ</h2>
-      <p class="lead">ご相談・お見積りはお気軽に。</p>
-      <p>
-        Instagram：
-        <a href="https://www.instagram.com/taiman723/" target="_blank">@taiman723</a>
-      </p>
+      <div class="sectionHead">
+        <div>
+          <h2>お問い合わせ</h2>
+          <p>ご相談・お見積りはお気軽にご連絡ください。</p>
+        </div>
+        <span class="pill">受付：Instagram</span>
+      </div>
+
+      <div class="contactBox reveal">
+        <div class="contactGrid">
+          <div class="contactItem">
+            <small>Instagram</small>
+            <div>
+              <a class="link" href="https://www.instagram.com/taiman723/" target="_blank" rel="noopener">
+                @taiman723
+              </a>
+            </div>
+          </div>
+          <div class="contactItem">
+            <small>所在地</small>
+            <div>四海</div>
+          </div>
+        </div>
+
+        <p style="margin:14px 0 0; color: var(--muted); font-size:14px;">
+          ※ 内容はデモです。必要なら「電話」「メール」「フォーム」も追加できます。
+        </p>
+      </div>
     </div>
   </section>
 </main>
@@ -184,12 +478,22 @@
 <footer>
   <div class="container footerInner">
     <span>© <span id="year"></span> 中岡興業</span>
-    <a href="#top">↑ Top</a>
+    <a class="link" href="#top">↑ Top</a>
   </div>
 </footer>
 
 <script>
+  // 年号自動
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // ふわっと表示（スクロールで出る）
+  const els = document.querySelectorAll(".reveal");
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add("on");
+    });
+  }, {threshold:.15});
+  els.forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
