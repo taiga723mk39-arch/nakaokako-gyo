@@ -53,6 +53,12 @@
     .brand{
       display:flex; align-items:center; gap:10px;
       font-weight:900; letter-spacing:.4px;
+      white-space:nowrap;            /* ★ブランド全体を改行させない */
+      flex:0 0 auto;                 /* ★勝手に縮まない */
+    }
+    .brandText{
+      white-space:nowrap;            /* ★「中岡興業」を絶対1行 */
+      word-break:keep-all;           /* ★日本語の途中改行を抑制 */
     }
     .logo{
       width:34px; height:34px; border-radius:12px;
@@ -60,6 +66,7 @@
       box-shadow:0 12px 30px rgba(124,58,237,.35);
       position:relative;
       overflow:hidden;
+      flex:0 0 auto;
     }
     .logo::after{
       content:"";
@@ -68,11 +75,12 @@
       transform:rotate(20deg);
       opacity:.55;
     }
-    nav{display:flex; gap:12px; align-items:center}
+    nav{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
     nav a{
       color:rgba(246,247,251,.78);
       padding:9px 12px; border-radius:999px;
       border:1px solid transparent;
+      white-space:nowrap;            /* ★ナビの文字も割れない */
     }
     nav a:hover{
       background:rgba(255,255,255,.06);
@@ -144,6 +152,7 @@
       background:rgba(255,255,255,.06);
       color:var(--text);
       transition: transform .06s ease, filter .2s ease, background .2s ease;
+      white-space:nowrap;
     }
     .btn:hover{filter:brightness(1.12); background:rgba(255,255,255,.10)}
     .btn:active{transform:translateY(1px)}
@@ -300,7 +309,10 @@
 <body>
 <header>
   <div class="container headerInner">
-    <a class="brand" href="#top"><span class="logo"></span>中岡興業</a>
+    <a class="brand" href="#top">
+      <span class="logo" aria-hidden="true"></span>
+      <span class="brandText">中岡興業</span>
+    </a>
     <nav>
       <a href="#services">事業内容</a>
       <a href="#strengths">強み</a>
@@ -437,6 +449,14 @@
           <div class="row"><div class="k">事業内容</div><div class="v">建築工事／土木工事／改修・リフォーム</div></div>
         </div>
       </div>
+
+      <!-- ★会社写真2枚目（追加したい場合はコメント解除） -->
+      <!--
+      <div style="height:14px"></div>
+      <div class="glass aboutMedia reveal" style="min-height:260px">
+        <img src="company2.JPG" alt="中岡興業 会社写真2">
+      </div>
+      -->
     </div>
   </section>
 
