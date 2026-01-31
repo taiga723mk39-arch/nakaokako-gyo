@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>中岡興業｜公式サイト</title>
+  <meta name="description" content="中岡興業は建設業を中心に、地域社会の発展に貢献しています。">
+
+  <style>
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", sans-serif;
+      background:#f7f7f7;
+      color:#333;
+      line-height:1.7;
+    }
+    header{
+      background:#111;
+      color:white;
+      padding:20px;
+    }
+    header h1{margin:0;font-size:26px}
+    nav{margin-top:8px}
+    nav a{
+      color:white;
+      margin-right:16px;
+      text-decoration:none;
+      font-size:14px;
+    }
+    section{
+      padding:40px 20px;
+      max-width:1000px;
+      margin:auto;
+    }
+    h2{
+      margin-bottom:16px;
+      border-left:4px solid #111;
+      padding-left:10px;
+    }
+
+    /* 写真共通 */
+    .photo{
+      width:100%;
+      border-radius:12px;
+      margin-bottom:20px;
+      object-fit:cover;
+    }
+
+    /* トップ写真 */
+    .hero-photo{
+      height:320px;
+    }
+
+    /* サービス */
+    .services{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+    .card{
+      background:white;
+      padding:20px;
+      border-radius:12px;
+    }
+    .card img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      border-radius:10px;
+      margin-bottom:12px;
+    }
+
+    /* 会社情報 */
+    .company-info{
+      background:white;
+      padding:20px;
+      border-radius:12px;
+    }
+    .company-info p{margin:8px 0}
+
+    footer{
+      background:#111;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>中岡興業</h1>
+  <nav>
+    <a href="#service">事業内容</a>
+    <a href="#about">会社情報</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- トップ写真（hero.jpg を入れる） -->
+<section>
+  <img src="hero.jpg" alt="中岡興業 建設現場" class="photo hero-photo">
+</section>
+
+<!-- 事業内容 -->
+<section id="service">
+  <h2>事業内容</h2>
+
+  <div class="services">
+    <div class="card">
+      <img src="service1.jpg" alt="建設工事">
+      <h3>建設工事一式</h3>
+      <p>
+        中岡興業は、建設工事一式を請け負い、
+        設計から施工まで一貫した体制で高品質な建築物を提供しています。
+        安全管理を徹底し、確実な施工を行います。
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="service2.jpg" alt="土木工事">
+      <h3>土木工事</h3>
+      <p>
+        道路・基礎工事・造成工事など、
+        地域インフラを支える土木工事を行っています。
+        長年の経験を活かし、耐久性の高い施工を実現します。
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="service3.jpg" alt="リフォーム工事">
+      <h3>改修・リフォーム</h3>
+      <p>
+        建物の改修工事やリフォームにも対応し、
+        機能性と安全性を重視した施工で
+        建物の価値向上をサポートします。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 会社情報 -->
+<section id="about">
+  <h2>会社情報</h2>
+
+  <img src="company.jpg" alt="中岡興業 会社写真" class="photo" style="height:220px;">
+
+  <div class="company-info">
+    <p><strong>会社名：</strong>中岡興業</p>
+    <p><strong>代表取締役社長：</strong>中岡 昇也</p>
+    <p><strong>所在地：</strong>四海</p>
+    <p><strong>年商：</strong>12億円</p>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section id="contact">
+  <h2>お問い合わせ</h2>
+  <p>
+    建設工事に関するご相談・お見積りは、
+    下記SNSよりお気軽にお問い合わせください。
+  </p>
+  <p>
+    Instagram：
+    <a href="https://www.instagram.com/taiman723/" target="_blank">
+      @taiman723
+    </a>
+  </p>
+</section>
+
+<footer>
+  © 中岡興業
+</footer>
+
+</body>
+</html>
