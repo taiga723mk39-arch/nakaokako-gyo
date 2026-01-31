@@ -1,177 +1,195 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <title>中岡興業｜公式サイト</title>
-  <meta name="description" content="中岡興業は建設業を中心に、地域社会の発展に貢献しています。">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>中岡興業｜建設業（建築・土木・改修）</title>
+  <meta name="description" content="中岡興業は建設業を中心に、建築・土木・改修工事まで一貫対応。安全と品質を第一に地域に貢献します。" />
 
   <style>
+    :root{
+      --bg:#0b1020; --panel:#0f1833; --card:#0f1b3b;
+      --text:#eef3ff; --muted:#b9c6ea;
+      --accent:#5ea1ff; --accent2:#7cf0ff;
+      --border:rgba(255,255,255,.12);
+      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --radius:18px; --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
-      margin:0;
-      font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", sans-serif;
-      background:#f7f7f7;
-      color:#333;
-      line-height:1.7;
+      margin:0; color:var(--text); line-height:1.75;
+      font-family: system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+      background:
+        radial-gradient(1000px 600px at 10% 0%, rgba(94,161,255,.22), transparent),
+        radial-gradient(900px 500px at 90% 10%, rgba(124,240,255,.14), transparent),
+        var(--bg);
     }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 32px)); margin:auto}
+
     header{
-      background:#111;
-      color:white;
-      padding:20px;
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background:rgba(11,16,32,.65);
+      border-bottom:1px solid var(--border);
     }
-    header h1{margin:0;font-size:26px}
-    nav{margin-top:8px}
-    nav a{
-      color:white;
-      margin-right:16px;
-      text-decoration:none;
-      font-size:14px;
-    }
-    section{
-      padding:40px 20px;
-      max-width:1000px;
-      margin:auto;
-    }
-    h2{
-      margin-bottom:16px;
-      border-left:4px solid #111;
-      padding-left:10px;
-    }
+    .headerInner{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
+    .logo{width:34px;height:34px;border-radius:12px;
+      background:linear-gradient(135deg, rgba(94,161,255,.95), rgba(124,240,255,.6));
+      box-shadow:0 10px 22px rgba(0,0,0,.25)}
+    nav{display:flex; gap:18px}
+    nav a{color:var(--muted); padding:8px 10px; border-radius:10px}
+    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
 
-    /* 写真共通 */
-    .photo{
-      width:100%;
-      border-radius:12px;
-      margin-bottom:20px;
-      object-fit:cover;
+    .hero{padding:70px 0}
+    .heroGrid{display:grid; grid-template-columns:1.1fr .9fr; gap:18px}
+    .heroCard{
+      background: linear-gradient(135deg, rgba(15,24,51,.86), rgba(15,24,51,.45));
+      border:1px solid var(--border); border-radius:var(--radius);
+      box-shadow:var(--shadow); padding:34px;
     }
+    .heroCard h1{margin:10px 0; font-size:clamp(28px, 4vw, 44px)}
+    .heroCard p{margin:0; color:var(--muted)}
+    .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:18px}
+    .stat{border:1px solid var(--border); border-radius:14px; padding:12px; background:rgba(255,255,255,.03)}
+    .stat b{display:block}
 
-    /* トップ写真 */
-    .hero-photo{
-      height:320px;
+    .heroPhoto{
+      border-radius:var(--radius); border:1px solid var(--border);
+      box-shadow:var(--shadow); overflow:hidden; min-height:320px;
     }
+    .heroPhoto img{width:100%; height:100%; object-fit:cover}
 
-    /* サービス */
-    .services{
-      display:grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-    }
+    section{padding:54px 0}
+    .alt{border-block:1px solid var(--border); background:rgba(255,255,255,.03)}
+    .title{margin:0 0 8px; font-size:28px}
+    .lead{margin:0 0 22px; color:var(--muted)}
+
+    .grid{display:grid; gap:16px}
+    .grid3{grid-template-columns:repeat(3,1fr)}
     .card{
-      background:white;
-      padding:20px;
-      border-radius:12px;
+      background: linear-gradient(180deg, rgba(15,27,59,.90), rgba(15,27,59,.62));
+      border:1px solid var(--border); border-radius:var(--radius);
+      box-shadow:var(--shadow); padding:18px;
     }
-    .card img{
-      width:100%;
-      height:160px;
-      object-fit:cover;
-      border-radius:10px;
-      margin-bottom:12px;
-    }
+    .thumb{height:170px; border-radius:14px; overflow:hidden; margin-bottom:12px}
+    .thumb img{width:100%; height:100%; object-fit:cover}
 
-    /* 会社情報 */
-    .company-info{
-      background:white;
-      padding:20px;
-      border-radius:12px;
-    }
-    .company-info p{margin:8px 0}
+    .aboutWrap{display:grid; grid-template-columns:.95fr 1.05fr; gap:16px}
+    .aboutPhoto{border-radius:var(--radius); overflow:hidden; min-height:340px; border:1px solid var(--border); box-shadow:var(--shadow)}
+    .aboutPhoto img{width:100%; height:100%; object-fit:cover}
+    .info{border:1px solid var(--border); border-radius:var(--radius); padding:18px; background:rgba(15,24,51,.7)}
+    .row{display:grid; grid-template-columns:160px 1fr; gap:12px; padding:10px}
+    .key{color:var(--muted)}
 
-    footer{
-      background:#111;
-      color:white;
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
+    footer{border-top:1px solid var(--border); background:rgba(11,16,32,.65); padding:18px 0}
+    .footerInner{display:flex; justify-content:space-between; color:var(--muted); font-size:14px}
+
+    @media (max-width: 900px){
+      .heroGrid,.grid3,.aboutWrap{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr}
     }
   </style>
 </head>
 
 <body>
-
 <header>
-  <h1>中岡興業</h1>
-  <nav>
-    <a href="#service">事業内容</a>
-    <a href="#about">会社情報</a>
-    <a href="#contact">お問い合わせ</a>
-  </nav>
+  <div class="container headerInner">
+    <a class="brand" href="#top"><span class="logo"></span>中岡興業</a>
+    <nav>
+      <a href="#services">事業内容</a>
+      <a href="#about">会社情報</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
 </header>
 
-<!-- トップ写真（hero.JPG を入れる） -->
-<section>
-  <img src="hero.JPG" alt="中岡興業 建設現場" class="photo hero-photo">
-</section>
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container heroGrid">
+      <div class="heroCard">
+        <h1>安全と品質を第一に、<br>地域の未来を支える施工を。</h1>
+        <p>中岡興業は、建築・土木・改修工事まで一貫対応。安心して任せられる施工を提供します。</p>
+        <div class="stats">
+          <div class="stat"><b>年商 12億円</b><span>安定基盤</span></div>
+          <div class="stat"><b>安全第一</b><span>管理徹底</span></div>
+          <div class="stat"><b>地域密着</b><span>迅速対応</span></div>
+        </div>
+      </div>
+      <div class="heroPhoto">
+        <img src="hero.JPG" alt="中岡興業 建設現場">
+      </div>
+    </div>
+  </section>
 
-<!-- 事業内容 -->
-<section id="service">
-  <h2>事業内容</h2>
+  <!-- SERVICES -->
+  <section id="services" class="alt">
+    <div class="container">
+      <h2 class="title">事業内容</h2>
+      <p class="lead">建築・土木・改修まで幅広く対応します。</p>
+      <div class="grid grid3">
+        <div class="card">
+          <div class="thumb"><img src="service1.JPG" alt="建築工事"></div>
+          <h3>建築工事</h3>
+          <p>新築・増改築などを品質重視で施工。</p>
+        </div>
+        <div class="card">
+          <div class="thumb"><img src="service2.JPG" alt="土木工事"></div>
+          <h3>土木工事</h3>
+          <p>造成・基礎・外構など地域インフラを支えます。</p>
+        </div>
+        <div class="card">
+          <div class="thumb"><img src="service1.JPG" alt="改修工事"></div>
+          <h3>改修・リフォーム</h3>
+          <p>安全性と機能性を高める改修をご提案。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="services">
-    <div class="card">
-      <img src="service1.JPG" alt="建設工事">
-      <h3>建設工事一式</h3>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2 class="title">会社情報</h2>
+      <div class="aboutWrap">
+        <div class="aboutPhoto">
+          <img src="company.JPG" alt="中岡興業 会社写真">
+        </div>
+        <div class="info">
+          <div class="row"><div class="key">会社名</div><div>中岡興業</div></div>
+          <div class="row"><div class="key">代表取締役社長</div><div>中岡 昇也</div></div>
+          <div class="row"><div class="key">所在地</div><div>四海</div></div>
+          <div class="row"><div class="key">年商</div><div>12億円</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="alt">
+    <div class="container">
+      <h2 class="title">お問い合わせ</h2>
+      <p class="lead">ご相談・お見積りはお気軽に。</p>
       <p>
-        中岡興業は、建設工事一式を請け負い、
-        設計から施工まで一貫した体制で高品質な建築物を提供しています。
-        安全管理を徹底し、確実な施工を行います。
+        Instagram：
+        <a href="https://www.instagram.com/taiman723/" target="_blank">@taiman723</a>
       </p>
     </div>
-
-    <div class="card">
-      <img src="service2.JPG" alt="土木工事">
-      <h3>土木工事</h3>
-      <p>
-        道路・基礎工事・造成工事など、
-        地域インフラを支える土木工事を行っています。
-        長年の経験を活かし、耐久性の高い施工を実現します。
-      </p>
-    </div>
-
-    <div class="card">
-      <img src="service3.JPG" alt="リフォーム工事">
-      <h3>改修・リフォーム</h3>
-      <p>
-        建物の改修工事やリフォームにも対応し、
-        機能性と安全性を重視した施工で
-        建物の価値向上をサポートします。
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- 会社情報 -->
-<section id="about">
-  <h2>会社情報</h2>
-
-  <img src="company.JPG" alt="中岡興業 会社写真" class="photo" style="height:220px;">
-
-  <div class="company-info">
-    <p><strong>会社名：</strong>中岡興業</p>
-    <p><strong>代表取締役社長：</strong>中岡 昇也</p>
-    <p><strong>所在地：</strong>四海</p>
-    <p><strong>年商：</strong>12億円</p>
-  </div>
-</section>
-
-<!-- お問い合わせ -->
-<section id="contact">
-  <h2>お問い合わせ</h2>
-  <p>
-    建設工事に関するご相談・お見積りは、
-    下記SNSよりお気軽にお問い合わせください。
-  </p>
-  <p>
-    Instagram：
-    <a href="https://www.instagram.com/taiman723/" target="_blank">
-      @taiman723
-    </a>
-  </p>
-</section>
+  </section>
+</main>
 
 <footer>
-  © 中岡興業
+  <div class="container footerInner">
+    <span>© <span id="year"></span> 中岡興業</span>
+    <a href="#top">↑ Top</a>
+  </div>
 </footer>
 
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
